@@ -19,7 +19,7 @@ public class QuestionGenerate : MonoBehaviour
 
     void Update()
     {
-        //8. Sinif mat
+        //8. Sinif matematik
         if(displayingQuestion == false && subject == "UsluSayilar")
         {
             displayingQuestion = true;
