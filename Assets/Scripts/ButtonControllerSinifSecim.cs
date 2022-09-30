@@ -8,12 +8,13 @@ public class ButtonControllerSinifSecim : MonoBehaviour
 {
     [SerializeField] private Button btn8;
     [SerializeField] private Button btn12;
-
+    [SerializeField] private Button btnBack;
     // Start is called before the first frame update
     void Start()
     {
         btn8.onClick.AddListener(TaskOnClick);
         btn12.onClick.AddListener(TaskOnClick01);
+        btnBack.onClick.AddListener(TaskOnClick02);
     }
 
     void TaskOnClick()
@@ -25,5 +26,9 @@ public class ButtonControllerSinifSecim : MonoBehaviour
     void TaskOnClick01()
     {
         SceneManager.LoadScene("DersSecim12");
+    }
+    void TaskOnClick02()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
