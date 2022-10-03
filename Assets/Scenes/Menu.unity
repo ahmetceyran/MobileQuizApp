@@ -563,6 +563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 830418636}
+  - component: {fileID: 830418637}
   m_Layer: 0
   m_Name: ButtonController
   m_TagString: Untagged
@@ -586,6 +587,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &830418637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830418634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1f289504d75f44f9621572b94fd5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btnSinifSecim: {fileID: 902409616}
+  btnLeaderBoard: {fileID: 1532704871}
 --- !u!1 &902409614
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +614,7 @@ GameObject:
   - component: {fileID: 902409617}
   - component: {fileID: 902409616}
   m_Layer: 5
-  m_Name: 8Grade
+  m_Name: SinifSecim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1036,7 +1051,7 @@ GameObject:
   - component: {fileID: 1532704872}
   - component: {fileID: 1532704871}
   m_Layer: 5
-  m_Name: 12Grade
+  m_Name: LeaderBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
