@@ -6,6 +6,7 @@ using UnityEngine;
 public class QuizEso : ScriptableObject
 {
     public string newQuestion;
+    public string subject;
     public string newA;
     public string newB;
     public string newC;
