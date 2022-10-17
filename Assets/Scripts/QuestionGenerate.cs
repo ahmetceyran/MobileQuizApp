@@ -427,6 +427,7 @@ public class QuestionGenerate : MonoBehaviour
             }
 
             QuestionDisplay.pleaseUpdate = false;
+            
         }
     }
 }
