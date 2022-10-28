@@ -737,6 +737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnSinifSecim: {fileID: 902409616}
   btnLeaderBoard: {fileID: 1532704871}
+  btnStore: {fileID: 365902948}
 --- !u!1 &863847918
 GameObject:
   m_ObjectHideFlags: 0
