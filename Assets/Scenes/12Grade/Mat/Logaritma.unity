@@ -1336,7 +1336,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "8. S\u0131n\u0131f -> Matematik -> K\xF6kl\xFC Say\u0131lar"
+  m_Text: "8. S\u0131n\u0131f -> Matematik -> Logaritma"
 --- !u!222 &896876719
 CanvasRenderer:
   m_ObjectHideFlags: 0
