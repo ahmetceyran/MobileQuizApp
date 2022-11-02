@@ -13,11 +13,22 @@ public class ButtonControllerMenu : MonoBehaviour
     void Start()
     {
         btnSinifSecim.onClick.AddListener(TaskOnClick);
+        btnLeaderBoard.onClick.AddListener(TaskOnClick1);
     }
 
     void TaskOnClick()
     {
         SceneManager.LoadScene("SinifSecim");
+    }
+
+    void TaskOnClick1()
+    {
+        SceneManager.LoadScene("LeaderBoard");
+    }
+
+    void TaskOnClick2()
+    {
+        SceneManager.LoadScene("Store");
     }
 
 }
