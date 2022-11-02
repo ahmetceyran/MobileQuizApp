@@ -812,11 +812,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 830418634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58f8f684a0570354ea9dc360d27cad20, type: 3}
+  m_Script: {fileID: 11500000, guid: 124489385185f5c439fc2843180bb805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  btn8: {fileID: 902409616}
-  btn12: {fileID: 1532704871}
   btnBack: {fileID: 149058463}
 --- !u!1 &902409614
 GameObject:
