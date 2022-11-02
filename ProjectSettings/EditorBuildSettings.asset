@@ -10,10 +10,10 @@ EditorBuildSettings:
     guid: 361a608e0c9208e4c850e8c04a20dc85
   - enabled: 1
     path: Assets/Scenes/Store.unity
-    guid: 6b3df1d5c360b414fa0e04b0287baa7b
+    guid: 876aed1bff2c6db46989072114902644
   - enabled: 1
     path: Assets/Scenes/LeaderBoard.unity
-    guid: 74f58899000c69c4d9d4b33ea421bc34
+    guid: 3fed6130f4cdd764e99fa0a4ab48a1eb
   - enabled: 1
     path: Assets/Scenes/SinifSecim.unity
     guid: 5c45e53053a1d1b44abecd0c11dba6b3

@@ -14,6 +14,7 @@ public class ButtonControllerMenu : MonoBehaviour
     {
         btnSinifSecim.onClick.AddListener(TaskOnClick);
         btnLeaderBoard.onClick.AddListener(TaskOnClick1);
+        btnStore.onClick.AddListener(TaskOnClick2);
     }
 
     void TaskOnClick()
