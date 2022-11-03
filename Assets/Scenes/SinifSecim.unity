@@ -1402,7 +1402,7 @@ GameObject:
   - component: {fileID: 1556221959}
   - component: {fileID: 1556221958}
   m_Layer: 5
-  m_Name: QuestionText
+  m_Name: SinifSecimText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
