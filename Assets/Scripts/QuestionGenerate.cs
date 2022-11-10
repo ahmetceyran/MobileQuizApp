@@ -158,7 +158,7 @@ public class QuestionGenerate : MonoBehaviour
 
             if (questionNumber == 2)
             {
-                QuestionDisplay.newQuestion = " Bizi düsündüren, her zaman iki secenekten birini tercih etmek oluyor. Peki, ortada iki seçenek olduğundan neden bu kadar eminiz? —- mecburi istikamet farkli kiliklara büründürülüyor ve iki ayri seçenek olarak önümüze sürülüyordur.\n\nYukaridaki parçada boş birakilan yere aşağidakilerden hangisi getirilmelidir?";
+                QuestionDisplay.newQuestion = " Bizi düşündüren, her zaman iki seçenekten birini tercih etmek oluyor. Peki, ortada iki seçenek olduğundan neden bu kadar eminiz? —- mecburi istikamet farkli kiliklara büründürülüyor ve iki ayri seçenek olarak önümüze sürülüyordur.\n\nYukaridaki parçada boş birakilan yere aşağidakilerden hangisi getirilmelidir?";
                 QuestionDisplay.newA = "A. Çünkü";
                 QuestionDisplay.newB = "B. Belki de";
                 QuestionDisplay.newC = "C. Buna rağmen";
