@@ -44,7 +44,9 @@ public class AnswerButtons : MonoBehaviour
 
     void Update()
     {
+
         currentScore.GetComponent<Text>().text = "SCORE : " + scoreValue;
+    
     }
 
     public void AnswerA()
