@@ -32,6 +32,7 @@ public class AnswerButtons : MonoBehaviour
     [SerializeField] private GameObject currentScore;
     private int scoreValue;
     private int bestScore;
+    private int coinAmount;
     [SerializeField] private GameObject bestDisplay;
     [SerializeField] private GameObject visual001;
 
