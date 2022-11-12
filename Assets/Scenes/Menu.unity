@@ -738,6 +738,7 @@ MonoBehaviour:
   btnSinifSecim: {fileID: 902409616}
   btnLeaderBoard: {fileID: 1532704871}
   btnStore: {fileID: 365902948}
+  coinDisplay: {fileID: 1792851925}
 --- !u!1 &863847918
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class ButtonControllerMenu : MonoBehaviour
         btnLeaderBoard.onClick.AddListener(TaskOnClick1);
         btnStore.onClick.AddListener(TaskOnClick2);
         coinAmount = PlayerPrefs.GetInt("CoinAmount");
-        coinDisplay.GetComponent<Text>().text = "Coin : " + coinAmount;
+        coinDisplay.GetComponent<Text>().text = "Coin Miktari : " + coinAmount;
     }
 
     void TaskOnClick()
