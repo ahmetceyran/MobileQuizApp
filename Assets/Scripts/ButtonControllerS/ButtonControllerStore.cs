@@ -14,7 +14,7 @@ public class ButtonControllerStore : MonoBehaviour
     {
         btnBack.onClick.AddListener(TaskOnClick);
         coinAmount = PlayerPrefs.GetInt("CoinAmount");
-        coinDisplay.GetComponent<Text>().text = "Coin Miktari : " + coinAmount;
+        coinDisplay.GetComponent<Text>().text = "Coin : " + coinAmount;
     }
 
     void TaskOnClick()
