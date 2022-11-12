@@ -61,7 +61,7 @@ public class AnswerButtons : MonoBehaviour
             answerAbackBlue.SetActive(false);
             correctFX.Play();
             scoreValue += 5;
-            coinAmount += 5;
+            coinAmount += 1;
         }
         else
         {
@@ -85,7 +85,7 @@ public class AnswerButtons : MonoBehaviour
             answerBbackBlue.SetActive(false);
             correctFX.Play();
             scoreValue += 5;
-            coinAmount += 5;
+            coinAmount += 1;
         }
         else
         {
@@ -109,7 +109,7 @@ public class AnswerButtons : MonoBehaviour
             answerCbackBlue.SetActive(false);
             correctFX.Play();
             scoreValue += 5;
-            coinAmount += 5;
+            coinAmount += 1;
         }
         else
         {
@@ -133,7 +133,7 @@ public class AnswerButtons : MonoBehaviour
             answerDbackBlue.SetActive(false);
             correctFX.Play();
             scoreValue += 5;
-            coinAmount += 5;
+            coinAmount += 1;
         }
         else
         {
