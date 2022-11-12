@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btnBack: {fileID: 149058463}
-  coinDisplay: {fileID: 0}
+  coinDisplay: {fileID: 933556887}
 --- !u!1 &933556887
 GameObject:
   m_ObjectHideFlags: 0
