@@ -2482,6 +2482,7 @@ MonoBehaviour:
   incorrectFX: {fileID: 1151976740}
   currentScore: {fileID: 2037165651}
   bestDisplay: {fileID: 1792851925}
+  coinDisplay: {fileID: 1471435997}
   visual001: {fileID: 1133979024}
 --- !u!114 &1283918688
 MonoBehaviour:

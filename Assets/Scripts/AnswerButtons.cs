@@ -34,12 +34,15 @@ public class AnswerButtons : MonoBehaviour
     private int bestScore;
     private int coinAmount;
     [SerializeField] private GameObject bestDisplay;
+    [SerializeField] private GameObject coinDisplay;
     [SerializeField] private GameObject visual001;
 
     void Start()
     {
         //PlayerPrefs.DeleteAll();
         bestScore = PlayerPrefs.GetInt("BestScoreQuiz");
+        coinAmount = PlayerPrefs.GetInt("CoinAmount");
+        coinDisplay.GetComponent<Text>().text = "Coin : " + coinAmount;
         bestDisplay.GetComponent<Text>().text = "Best : " + bestScore;
     }
 
@@ -47,7 +50,7 @@ public class AnswerButtons : MonoBehaviour
     {
 
         currentScore.GetComponent<Text>().text = "SCORE : " + scoreValue;
-    
+        coinDisplay.GetComponent<Text>().text = "Coin : " + coinAmount;
     }
 
     public void AnswerA()
@@ -58,6 +61,7 @@ public class AnswerButtons : MonoBehaviour
             answerAbackBlue.SetActive(false);
             correctFX.Play();
             scoreValue += 5;
+            coinAmount += 5;
         }
         else
         {
@@ -81,6 +85,7 @@ public class AnswerButtons : MonoBehaviour
             answerBbackBlue.SetActive(false);
             correctFX.Play();
             scoreValue += 5;
+            coinAmount += 5;
         }
         else
         {
@@ -104,6 +109,7 @@ public class AnswerButtons : MonoBehaviour
             answerCbackBlue.SetActive(false);
             correctFX.Play();
             scoreValue += 5;
+            coinAmount += 5;
         }
         else
         {
@@ -127,6 +133,7 @@ public class AnswerButtons : MonoBehaviour
             answerDbackBlue.SetActive(false);
             correctFX.Play();
             scoreValue += 5;
+            coinAmount += 5;
         }
         else
         {
@@ -152,6 +159,7 @@ public class AnswerButtons : MonoBehaviour
         }
         yield return new WaitForSeconds(1.5f);
 
+        PlayerPrefs.SetInt("CoinAmount", coinAmount);
         visual001.SetActive(false);
         answerAbackGreen.SetActive(false);
         answerBbackGreen.SetActive(false);
