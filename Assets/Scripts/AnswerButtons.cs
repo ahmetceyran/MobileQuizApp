@@ -62,6 +62,7 @@ public class AnswerButtons : MonoBehaviour
             correctFX.Play();
             scoreValue += 5;
             coinAmount += 1;
+            PlayerPrefs.SetInt("CoinAmount", coinAmount);
         }
         else
         {
@@ -86,6 +87,7 @@ public class AnswerButtons : MonoBehaviour
             correctFX.Play();
             scoreValue += 5;
             coinAmount += 1;
+            PlayerPrefs.SetInt("CoinAmount", coinAmount);
         }
         else
         {
@@ -110,6 +112,7 @@ public class AnswerButtons : MonoBehaviour
             correctFX.Play();
             scoreValue += 5;
             coinAmount += 1;
+            PlayerPrefs.SetInt("CoinAmount", coinAmount);
         }
         else
         {
@@ -134,6 +137,7 @@ public class AnswerButtons : MonoBehaviour
             correctFX.Play();
             scoreValue += 5;
             coinAmount += 1;
+            PlayerPrefs.SetInt("CoinAmount", coinAmount);
         }
         else
         {
@@ -159,7 +163,6 @@ public class AnswerButtons : MonoBehaviour
         }
         yield return new WaitForSeconds(1.5f);
 
-        PlayerPrefs.SetInt("CoinAmount", coinAmount);
         visual001.SetActive(false);
         answerAbackGreen.SetActive(false);
         answerBbackGreen.SetActive(false);
