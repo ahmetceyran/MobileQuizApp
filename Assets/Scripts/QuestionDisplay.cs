@@ -17,7 +17,6 @@ public class QuestionDisplay : MonoBehaviour
     public static string newD;
     public static bool pleaseUpdate = false;
 
-    
     void Update()
     {
         if(pleaseUpdate == false)

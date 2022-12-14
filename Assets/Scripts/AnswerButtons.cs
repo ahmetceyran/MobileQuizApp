@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class AnswerButtons : MonoBehaviour
 {
+    [SerializeField] private Button btnJoker;
+    [SerializeField] private Button btnJokerScreenClose;
+    [SerializeField] private GameObject UseJokerScreen;
     [SerializeField] private GameObject answerAbackBlue;
     [SerializeField] private GameObject answerAbackGreen;
     [SerializeField] private GameObject answerAbackRed;
@@ -30,6 +33,14 @@ public class AnswerButtons : MonoBehaviour
     [SerializeField] private AudioSource incorrectFX;
 
     [SerializeField] private GameObject currentScore;
+
+    [SerializeField] private Text doubleDisplay;
+    [SerializeField] private Text fiftyDisplay;
+    [SerializeField] private Text passDisplay;
+
+    private int doubleAmount;
+    private int fiftyAmount;
+    private int passAmount;
     private int scoreValue;
     private int bestScore;
     private int coinAmount;
@@ -44,10 +55,19 @@ public class AnswerButtons : MonoBehaviour
         coinAmount = PlayerPrefs.GetInt("CoinAmount");
         coinDisplay.GetComponent<Text>().text = "Coin : " + coinAmount;
         bestDisplay.GetComponent<Text>().text = "Best : " + bestScore;
+        UseJokerScreen.SetActive(false);
+        btnJoker.onClick.AddListener(TaskOnClick);
+        btnJokerScreenClose.onClick.AddListener(TaskOnClick1);
     }
 
     void Update()
     {
+        fiftyAmount = PlayerPrefs.GetInt("FiftyAmount");
+        passAmount = PlayerPrefs.GetInt("PassAmount");
+        doubleAmount = PlayerPrefs.GetInt("DoubleAmount");
+        doubleDisplay.text = "Kalan : " + doubleAmount;
+        fiftyDisplay.text = "Kalan : " + fiftyAmount;
+        passDisplay.text = "Kalan : " + passAmount;
 
         currentScore.GetComponent<Text>().text = "SCORE : " + scoreValue;
         coinDisplay.GetComponent<Text>().text = "Coin : " + coinAmount;
@@ -182,5 +202,14 @@ public class AnswerButtons : MonoBehaviour
         answerD.GetComponent<Button>().enabled = true;
 
         QuestionGenerate.displayingQuestion = false;
+    }
+
+    void TaskOnClick()
+    {
+        UseJokerScreen.SetActive(true);
+    }
+    void TaskOnClick1()
+    {
+        UseJokerScreen.SetActive(false);
     }
 }
