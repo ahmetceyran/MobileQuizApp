@@ -7,6 +7,9 @@ public class AnswerButtons : MonoBehaviour
 {
     [SerializeField] private Button btnJoker;
     [SerializeField] private Button btnJokerScreenClose;
+    [SerializeField] private Button btnDoubleJoker;
+    [SerializeField] private Button btnFiftyJoker;
+    [SerializeField] private Button btnPassJoker;
     [SerializeField] private GameObject UseJokerScreen;
     [SerializeField] private GameObject answerAbackBlue;
     [SerializeField] private GameObject answerAbackGreen;
@@ -44,6 +47,7 @@ public class AnswerButtons : MonoBehaviour
     private int scoreValue;
     private int bestScore;
     private int coinAmount;
+    private bool doubleAnswer;
     [SerializeField] private GameObject bestDisplay;
     [SerializeField] private GameObject coinDisplay;
     [SerializeField] private GameObject visual001;
@@ -51,6 +55,7 @@ public class AnswerButtons : MonoBehaviour
     void Start()
     {
         //PlayerPrefs.DeleteAll();
+        doubleAnswer = false;
         bestScore = PlayerPrefs.GetInt("BestScoreQuiz");
         coinAmount = PlayerPrefs.GetInt("CoinAmount");
         coinDisplay.GetComponent<Text>().text = "Coin : " + coinAmount;
@@ -58,6 +63,9 @@ public class AnswerButtons : MonoBehaviour
         UseJokerScreen.SetActive(false);
         btnJoker.onClick.AddListener(TaskOnClick);
         btnJokerScreenClose.onClick.AddListener(TaskOnClick1);
+        btnDoubleJoker.onClick.AddListener(TaskOnClick2);
+        btnFiftyJoker.onClick.AddListener(TaskOnClick3);
+        btnPassJoker.onClick.AddListener(TaskOnClick4);
     }
 
     void Update()
@@ -75,102 +83,196 @@ public class AnswerButtons : MonoBehaviour
 
     public void AnswerA()
     {
-        if(QuestionGenerate.actualAnswer == "A")
+        if(!doubleAnswer)
         {
-            answerAbackGreen.SetActive(true);
-            answerAbackBlue.SetActive(false);
-            correctFX.Play();
-            scoreValue += 5;
-            coinAmount += 1;
-            PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            if(QuestionGenerate.actualAnswer == "A")
+            {
+                answerAbackGreen.SetActive(true);
+                answerAbackBlue.SetActive(false);
+                correctFX.Play();
+                scoreValue += 5;
+                coinAmount += 1;
+                PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            }
+            else
+            {
+                answerAbackRed.SetActive(true);
+                answerAbackBlue.SetActive(false);
+                incorrectFX.Play();
+                scoreValue = 0;
+            }
+            answerA.GetComponent<Button>().enabled = false;
+            answerB.GetComponent<Button>().enabled = false;
+            answerC.GetComponent<Button>().enabled = false;
+            answerD.GetComponent<Button>().enabled = false;
+            StartCoroutine(NextQuestion());
         }
-        else
+        if(doubleAnswer)
         {
-            answerAbackRed.SetActive(true);
-            answerAbackBlue.SetActive(false);
-            incorrectFX.Play();
-            scoreValue = 0;
+            if(QuestionGenerate.actualAnswer == "A")
+            {
+                answerAbackGreen.SetActive(true);
+                answerAbackBlue.SetActive(false);
+                correctFX.Play();
+                scoreValue += 5;
+                coinAmount += 1;
+                PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            }
+            else
+            {
+                answerAbackRed.SetActive(true);
+                answerAbackBlue.SetActive(false);
+                incorrectFX.Play();
+                doubleAnswer = false;
+            }
         }
-        answerA.GetComponent<Button>().enabled = false;
-        answerB.GetComponent<Button>().enabled = false;
-        answerC.GetComponent<Button>().enabled = false;
-        answerD.GetComponent<Button>().enabled = false;
-        StartCoroutine(NextQuestion());
+        
     }
 
     public void AnswerB()
     {
-        if (QuestionGenerate.actualAnswer == "B")
+        if(!doubleAnswer)
         {
-            answerBbackGreen.SetActive(true);
-            answerBbackBlue.SetActive(false);
-            correctFX.Play();
-            scoreValue += 5;
-            coinAmount += 1;
-            PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            if (QuestionGenerate.actualAnswer == "B")
+            {
+                answerBbackGreen.SetActive(true);
+                answerBbackBlue.SetActive(false);
+                correctFX.Play();
+                scoreValue += 5;
+                coinAmount += 1;
+                PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            }
+            else
+            {
+                answerBbackRed.SetActive(true);
+                answerBbackBlue.SetActive(false);
+                incorrectFX.Play();
+                scoreValue = 0;
+            }
+            answerA.GetComponent<Button>().enabled = false;
+            answerB.GetComponent<Button>().enabled = false;
+            answerC.GetComponent<Button>().enabled = false;
+            answerD.GetComponent<Button>().enabled = false;
+            StartCoroutine(NextQuestion());
         }
-        else
+        if(doubleAnswer)
         {
-            answerBbackRed.SetActive(true);
-            answerBbackBlue.SetActive(false);
-            incorrectFX.Play();
-            scoreValue = 0;
+            if (QuestionGenerate.actualAnswer == "B")
+            {
+                answerBbackGreen.SetActive(true);
+                answerBbackBlue.SetActive(false);
+                correctFX.Play();
+                scoreValue += 5;
+                coinAmount += 1;
+                PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            }
+            else
+            {
+                answerBbackRed.SetActive(true);
+                answerBbackBlue.SetActive(false);
+                incorrectFX.Play();
+                doubleAnswer = false;
+            }
         }
-        answerA.GetComponent<Button>().enabled = false;
-        answerB.GetComponent<Button>().enabled = false;
-        answerC.GetComponent<Button>().enabled = false;
-        answerD.GetComponent<Button>().enabled = false;
-        StartCoroutine(NextQuestion());
+        
     }
 
     public void AnswerC()
     {
-        if (QuestionGenerate.actualAnswer == "C")
+        if(!doubleAnswer)
         {
-            answerCbackGreen.SetActive(true);
-            answerCbackBlue.SetActive(false);
-            correctFX.Play();
-            scoreValue += 5;
-            coinAmount += 1;
-            PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            if (QuestionGenerate.actualAnswer == "C")
+            {
+                answerCbackGreen.SetActive(true);
+                answerCbackBlue.SetActive(false);
+                correctFX.Play();
+                scoreValue += 5;
+                coinAmount += 1;
+                PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            }
+            else
+            {
+                answerCbackRed.SetActive(true);
+                answerCbackBlue.SetActive(false);
+                incorrectFX.Play();
+                scoreValue = 0;
+            }
+            answerA.GetComponent<Button>().enabled = false;
+            answerB.GetComponent<Button>().enabled = false;
+            answerC.GetComponent<Button>().enabled = false;
+            answerD.GetComponent<Button>().enabled = false;
+            StartCoroutine(NextQuestion());
         }
-        else
+        
+        if(doubleAnswer)
         {
-            answerCbackRed.SetActive(true);
-            answerCbackBlue.SetActive(false);
-            incorrectFX.Play();
-            scoreValue = 0;
+            if (QuestionGenerate.actualAnswer == "C")
+            {
+                answerCbackGreen.SetActive(true);
+                answerCbackBlue.SetActive(false);
+                correctFX.Play();
+                scoreValue += 5;
+                coinAmount += 1;
+                PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            }
+            else
+            {
+                answerCbackRed.SetActive(true);
+                answerCbackBlue.SetActive(false);
+                incorrectFX.Play();
+                doubleAnswer = false;
+            }
         }
-        answerA.GetComponent<Button>().enabled = false;
-        answerB.GetComponent<Button>().enabled = false;
-        answerC.GetComponent<Button>().enabled = false;
-        answerD.GetComponent<Button>().enabled = false;
-        StartCoroutine(NextQuestion());
+        
     }
 
     public void AnswerD()
     {
-        if (QuestionGenerate.actualAnswer == "D")
+        if(!doubleAnswer)
         {
-            answerDbackGreen.SetActive(true);
-            answerDbackBlue.SetActive(false);
-            correctFX.Play();
-            scoreValue += 5;
-            coinAmount += 1;
-            PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            if (QuestionGenerate.actualAnswer == "D")
+            {
+                answerDbackGreen.SetActive(true);
+                answerDbackBlue.SetActive(false);
+                correctFX.Play();
+                scoreValue += 5;
+                coinAmount += 1;
+                PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            }
+            else
+            {
+                answerDbackRed.SetActive(true);
+                answerDbackBlue.SetActive(false);
+                incorrectFX.Play();
+                scoreValue = 0;
+            }
+            answerA.GetComponent<Button>().enabled = false;
+            answerB.GetComponent<Button>().enabled = false;
+            answerC.GetComponent<Button>().enabled = false;
+            answerD.GetComponent<Button>().enabled = false;
+            StartCoroutine(NextQuestion());
+            
         }
-        else
+        if(doubleAnswer)
         {
-            answerDbackRed.SetActive(true);
-            answerDbackBlue.SetActive(false);
-            incorrectFX.Play();
-            scoreValue = 0;
+            if (QuestionGenerate.actualAnswer == "D")
+            {
+                answerDbackGreen.SetActive(true);
+                answerDbackBlue.SetActive(false);
+                correctFX.Play();
+                scoreValue += 5;
+                coinAmount += 1;
+                PlayerPrefs.SetInt("CoinAmount", coinAmount);
+            }
+            else
+            {
+                answerDbackRed.SetActive(true);
+                answerDbackBlue.SetActive(false);
+                incorrectFX.Play();
+                doubleAnswer = false;
+            }
         }
-        answerA.GetComponent<Button>().enabled = false;
-        answerB.GetComponent<Button>().enabled = false;
-        answerC.GetComponent<Button>().enabled = false;
-        answerD.GetComponent<Button>().enabled = false;
-        StartCoroutine(NextQuestion());
+        
     }
 
     IEnumerator NextQuestion()
@@ -200,7 +302,7 @@ public class AnswerButtons : MonoBehaviour
         answerB.GetComponent<Button>().enabled = true;
         answerC.GetComponent<Button>().enabled = true;
         answerD.GetComponent<Button>().enabled = true;
-
+        UseJokerScreen.SetActive(false);
         QuestionGenerate.displayingQuestion = false;
     }
 
@@ -211,5 +313,31 @@ public class AnswerButtons : MonoBehaviour
     void TaskOnClick1()
     {
         UseJokerScreen.SetActive(false);
+    }
+    void TaskOnClick2()
+    {
+        if(doubleAmount > 0)
+        {
+            doubleAmount--;
+            PlayerPrefs.SetInt("DoubleAmount", doubleAmount);
+            doubleAnswer = true;
+        }
+    }
+    void TaskOnClick3()
+    {
+        if(fiftyAmount > 0)
+        {
+            fiftyAmount--;
+            PlayerPrefs.SetInt("FiftyAmount", fiftyAmount);
+        }
+    }
+    void TaskOnClick4()
+    {
+        if(passAmount > 0)
+        {
+            passAmount--;
+            PlayerPrefs.SetInt("PassAmount", passAmount);
+            StartCoroutine(NextQuestion());
+        }
     }
 }

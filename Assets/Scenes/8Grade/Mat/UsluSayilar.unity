@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.979187, y: 499.0242}
+  m_AnchoredPosition: {x: -5.979248, y: 499.02417}
   m_SizeDelta: {x: -59.6054, y: -1054.7369}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &59718930
@@ -3760,6 +3760,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnJoker: {fileID: 977094689}
   btnJokerScreenClose: {fileID: 2046333831}
+  btnDoubleJoker: {fileID: 2112017892}
+  btnFiftyJoker: {fileID: 593385122}
+  btnPassJoker: {fileID: 289824823}
   UseJokerScreen: {fileID: 1474345373}
   answerAbackBlue: {fileID: 98078028}
   answerAbackGreen: {fileID: 1512181525}
