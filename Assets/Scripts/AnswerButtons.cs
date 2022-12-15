@@ -72,8 +72,7 @@ public class AnswerButtons : MonoBehaviour
     {
         fiftyAmount = PlayerPrefs.GetInt("FiftyAmount");
         passAmount = PlayerPrefs.GetInt("PassAmount");
-        doubleAmount = 6;
-        //doubleAmount = PlayerPrefs.GetInt("DoubleAmount");
+        doubleAmount = PlayerPrefs.GetInt("DoubleAmount");
         doubleDisplay.text = "Kalan : " + doubleAmount;
         fiftyDisplay.text = "Kalan : " + fiftyAmount;
         passDisplay.text = "Kalan : " + passAmount;
