@@ -72,7 +72,8 @@ public class AnswerButtons : MonoBehaviour
     {
         fiftyAmount = PlayerPrefs.GetInt("FiftyAmount");
         passAmount = PlayerPrefs.GetInt("PassAmount");
-        doubleAmount = PlayerPrefs.GetInt("DoubleAmount");
+        doubleAmount = 6;
+        //doubleAmount = PlayerPrefs.GetInt("DoubleAmount");
         doubleDisplay.text = "Kalan : " + doubleAmount;
         fiftyDisplay.text = "Kalan : " + fiftyAmount;
         passDisplay.text = "Kalan : " + passAmount;
@@ -117,6 +118,11 @@ public class AnswerButtons : MonoBehaviour
                 scoreValue += 5;
                 coinAmount += 1;
                 PlayerPrefs.SetInt("CoinAmount", coinAmount);
+                answerA.GetComponent<Button>().enabled = false;
+                answerB.GetComponent<Button>().enabled = false;
+                answerC.GetComponent<Button>().enabled = false;
+                answerD.GetComponent<Button>().enabled = false;
+                StartCoroutine(NextQuestion());
             }
             else
             {
@@ -165,6 +171,11 @@ public class AnswerButtons : MonoBehaviour
                 scoreValue += 5;
                 coinAmount += 1;
                 PlayerPrefs.SetInt("CoinAmount", coinAmount);
+                answerA.GetComponent<Button>().enabled = false;
+                answerB.GetComponent<Button>().enabled = false;
+                answerC.GetComponent<Button>().enabled = false;
+                answerD.GetComponent<Button>().enabled = false;
+                StartCoroutine(NextQuestion());
             }
             else
             {
@@ -214,6 +225,11 @@ public class AnswerButtons : MonoBehaviour
                 scoreValue += 5;
                 coinAmount += 1;
                 PlayerPrefs.SetInt("CoinAmount", coinAmount);
+                answerA.GetComponent<Button>().enabled = false;
+                answerB.GetComponent<Button>().enabled = false;
+                answerC.GetComponent<Button>().enabled = false;
+                answerD.GetComponent<Button>().enabled = false;
+                StartCoroutine(NextQuestion());
             }
             else
             {
@@ -263,6 +279,11 @@ public class AnswerButtons : MonoBehaviour
                 scoreValue += 5;
                 coinAmount += 1;
                 PlayerPrefs.SetInt("CoinAmount", coinAmount);
+                answerA.GetComponent<Button>().enabled = false;
+                answerB.GetComponent<Button>().enabled = false;
+                answerC.GetComponent<Button>().enabled = false;
+                answerD.GetComponent<Button>().enabled = false;
+                StartCoroutine(NextQuestion());
             }
             else
             {

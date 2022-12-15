@@ -3843,6 +3843,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnJoker: {fileID: 977094689}
   btnJokerScreenClose: {fileID: 2046333831}
+  btnDoubleJoker: {fileID: 2112017892}
+  btnFiftyJoker: {fileID: 593385122}
+  btnPassJoker: {fileID: 289824823}
   UseJokerScreen: {fileID: 1474345373}
   answerAbackBlue: {fileID: 98078028}
   answerAbackGreen: {fileID: 1512181525}
