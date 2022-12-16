@@ -306,6 +306,10 @@ public class AnswerButtons : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         visual001.SetActive(false);
+        answerA.SetActive(true);
+        answerB.SetActive(true);
+        answerC.SetActive(true);
+        answerD.SetActive(true);
         answerAbackGreen.SetActive(false);
         answerBbackGreen.SetActive(false);
         answerCbackGreen.SetActive(false);
@@ -349,6 +353,18 @@ public class AnswerButtons : MonoBehaviour
         {
             fiftyAmount--;
             PlayerPrefs.SetInt("FiftyAmount", fiftyAmount);
+            
+            if(QuestionGenerate.actualAnswer == "A" || QuestionGenerate.actualAnswer == "D")
+            {
+                answerB.SetActive(false);
+                answerC.SetActive(false);
+            }
+
+            if(QuestionGenerate.actualAnswer == "B" || QuestionGenerate.actualAnswer == "C")
+            {
+                answerA.SetActive(false);
+                answerD.SetActive(false);
+            }
         }
     }
     void TaskOnClick4()
