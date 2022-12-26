@@ -9,12 +9,16 @@ public class ButtonControllerSinifSecim : MonoBehaviour
     [SerializeField] private Button btn8;
     [SerializeField] private Button btn12;
     [SerializeField] private Button btnBack;
+    [SerializeField] private Text sinifSecimText;
+    private string username;
     // Start is called before the first frame update
     void Start()
     {
+        username = PlayerPrefs.GetString("username");
         btn8.onClick.AddListener(TaskOnClick);
         btn12.onClick.AddListener(TaskOnClick01);
         btnBack.onClick.AddListener(TaskOnClick02);
+        sinifSecimText.text = "Hosgeldin " + username + " :)";
     }
 
     void TaskOnClick()
