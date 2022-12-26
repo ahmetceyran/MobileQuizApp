@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 543d0937679ac6e4fac66d32ada7786d
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 361a608e0c9208e4c850e8c04a20dc85
   - enabled: 1
@@ -35,27 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/12Grade/12DilEdebiyatKonuSecim.unity
     guid: 59f6dab4d57b8cc4ab1b45e9d946d6a0
-  - enabled: 1
-    path: Assets/Scenes/8Grade/Mat/KokluSayilar.unity
-    guid: 5e5c92c4f9c4ed34c863ea0d996dd1bb
-  - enabled: 1
-    path: Assets/Scenes/8Grade/Mat/UsluSayilar.unity
-    guid: 57603e1cdda9b1f4b8ff9afe9c1028bb
-  - enabled: 1
-    path: Assets/Scenes/8Grade/Turkce/CumledeAnlam.unity
-    guid: 6bb27c547f4e5d842bcf632aaefa604f
-  - enabled: 1
-    path: Assets/Scenes/8Grade/Turkce/SozcukteAnlam.unity
-    guid: ac8cf99cfdd1136458d4fd6fe4857faf
-  - enabled: 1
-    path: Assets/Scenes/12Grade/Mat/Diziler.unity
-    guid: 01a93af314e9b7e44803845950983099
-  - enabled: 1
-    path: Assets/Scenes/12Grade/Mat/Logaritma.unity
-    guid: c8b9e554f70329f48bb4f56a66ca2c1a
-  - enabled: 1
-    path: Assets/Scenes/12Grade/TurkDiliveEdebiyat/IletisimDil.unity
-    guid: bbf199b4a8287bc4aad97b5d94a5f1fe
   - enabled: 1
     path: Assets/Scenes/12Grade/TurkDiliveEdebiyat/SozcukteVeSozObeklerindeAnlam.unity
     guid: 547c0e24b02f71b46a4c0700fe57800d
