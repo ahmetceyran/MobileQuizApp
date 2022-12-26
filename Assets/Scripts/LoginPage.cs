@@ -11,9 +11,12 @@ public class LoginPage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //PlayerPrefs.DeleteKey("username");
         if(PlayerPrefs.HasKey("username"))
         {
             SceneManager.LoadScene("Menu");
+        }else{
+            PlayerPrefs.DeleteAll();
         }
         btnLogin.onClick.AddListener(TaskOnClick);
     }
