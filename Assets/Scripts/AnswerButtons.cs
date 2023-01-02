@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PlayFab;
+using PlayFab.ClientModels;
 
 public class AnswerButtons : MonoBehaviour
 {
@@ -55,6 +57,8 @@ public class AnswerButtons : MonoBehaviour
     void Start()
     {
         //PlayerPrefs.DeleteAll();
+        Login();
+        StartCoroutine(WaitAndUpdateLeaderboard());
         doubleAnswer = false;
         bestScore = PlayerPrefs.GetInt("BestScoreQuiz");
         coinAmount = PlayerPrefs.GetInt("CoinAmount");
@@ -302,6 +306,7 @@ public class AnswerButtons : MonoBehaviour
             PlayerPrefs.SetInt("BestScoreQuiz", scoreValue);
             bestScore = scoreValue;
             bestDisplay.GetComponent<Text>().text = "Best : " + scoreValue;
+            SendLeaderboard(bestScore);
         }
         yield return new WaitForSeconds(1.5f);
 
@@ -376,4 +381,44 @@ public class AnswerButtons : MonoBehaviour
             StartCoroutine(NextQuestion());
         }
     }
+
+    void Login(){
+        var request = new LoginWithCustomIDRequest{
+            CustomId = SystemInfo.deviceUniqueIdentifier,
+            CreateAccount = true
+        };
+        PlayFabClientAPI.LoginWithCustomID(request, OnSucces,OnError);
+    }
+
+    void OnSucces(LoginResult result){
+        Debug.Log("successful login/account created");
+    }
+    void OnError(PlayFabError error)
+    {
+        Debug.Log("Error while logging in/account create");
+    }
+
+    public void SendLeaderboard(int score)
+    {
+        var request = new UpdatePlayerStatisticsRequest{
+            Statistics = new List<StatisticUpdate>{
+                new StatisticUpdate{
+                    StatisticName = "BestScore",
+                    Value = score
+                }
+            }
+        };
+        PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnError);
+    }
+
+    void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result){
+        Debug.Log("Leaderboard updated");
+    }
+
+    private IEnumerator WaitAndUpdateLeaderboard()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SendLeaderboard(bestScore);
+    }
+
 }
